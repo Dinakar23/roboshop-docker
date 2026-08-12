@@ -59,8 +59,16 @@ services:
     command: --mysql-native-password=ON
     environment:
       MYSQL_ROOT_PASSWORD: "RoboShop@1"
-
-networks:
+  shipping:
+    build: ./shipping
+    image: shipping:v1
+    container_name: shipping  
+    depends_on:
+      - cart
+      - mysql
+    environment:
+      CART_ENDPOINT: cart:8080
+      DB_HOST : mysql
   default:
     name: roboshop
     driver: bridge
