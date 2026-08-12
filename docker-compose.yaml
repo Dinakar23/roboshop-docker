@@ -1,4 +1,4 @@
-name : roboshop
+-name : roboshop
 services:
   mongodb:
     build: ./mongodb
@@ -19,9 +19,8 @@ services:
     depends_on:
       - catalogue
 
-
 networks:
   default : #All the services in this file can use network
   name: roboshop
-  driver : bridge
+  driver : "bridge"
   external : false # if it's true it should be created manually , if false Docker will create network
