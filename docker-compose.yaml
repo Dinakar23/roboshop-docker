@@ -53,11 +53,11 @@ services:
     container_name: redis
 
   mysql:
+    build: ./mysql
     image: mysql:v1
-    build: mysql
     container_name: mysql
     environment:
-        MYSQL_ROOT_PASSWORD="RoboShop@1"
+      MYSQL_ROOT_PASSWORD: "RoboShop@1"
 
 networks:
   default:
