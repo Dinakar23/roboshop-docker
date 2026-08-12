@@ -1,6 +1,7 @@
 name: roboshop
 
 services:
+
   mongodb:
     build: ./mongodb
     image: mongodb:v1
@@ -56,21 +57,22 @@ services:
     build: ./mysql
     image: mysql:v1
     container_name: mysql
-    #command: --mysql-native-password=ON
     environment:
       MYSQL_ROOT_PASSWORD: "RoboShop@1"
+
   shipping:
     build: ./shipping
     image: shipping:v1
-    container_name: shipping  
+    container_name: shipping
     depends_on:
       - cart
       - mysql
     environment:
-      CART_ENDPOINT: cart:8080
-      DB_HOST : mysql
-  Networks:
-    default:
-      name: roboshop
-      driver: bridge
-      external : false
+      CART_ENDPOINT: "cart:8080"
+      DB_HOST: "mysql"
+
+networks:
+  default:
+    name: roboshop
+    driver: bridge
+    external: false
