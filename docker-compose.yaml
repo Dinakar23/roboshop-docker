@@ -1,16 +1,19 @@
-name : roboshop
+name: roboshop
+
 services:
   mongodb:
     build: ./mongodb
     image: mongodb:v1
     container_name: mongodb
-  catalogue :
+
+  catalogue:
     build: ./catalogue
     image: catalogue:v1
     container_name: catalogue
     depends_on:
       - mongodb
-  frontend :
+
+  frontend:
     build: ./frontend
     image: frontend:v1
     container_name: frontend
@@ -20,6 +23,6 @@ services:
       - catalogue
 
 networks:
-  default : #All the services in this file can use network
-  name: roboshop
-  driver : bridge
+  default:
+    name: roboshop
+    driver: bridge
