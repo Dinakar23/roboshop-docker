@@ -13,7 +13,7 @@ services:
     depends_on:
       - mongodb
 
-  frontend:
+  FRONTEND:
     build: ./frontend
     image: frontend:v1
     container_name: frontend
