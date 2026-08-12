@@ -69,7 +69,8 @@ services:
     environment:
       CART_ENDPOINT: cart:8080
       DB_HOST : mysql
-  default:
-    name: roboshop
-    driver: bridge
-    external : false
+  Networks:
+    default:
+      name: roboshop
+      driver: bridge
+      external : false
