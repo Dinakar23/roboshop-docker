@@ -24,6 +24,7 @@ services:
       - catalogue
       - user
       - cart
+      - shipping
 
   user:
     build: ./user
