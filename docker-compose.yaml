@@ -114,6 +114,6 @@ networks:
     #external: false
 volumes:
   mongodb: #docker volume create mongodb
-  cart : #docker volume create cart
-  catalogue : #docker volume create catalogue
-  user:  #docker volume create user
+  redis : #docker volume create redis
+  mysql : #docker volume create mysql
+  rabbitmq:  #docker volume create rabbitmq
